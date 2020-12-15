@@ -3,7 +3,7 @@ A dead simple event bus written in typescript.
 
 ## Example
 
-```
+``` javascript
 import EventBus from '@janmarkuslanger/eventbus';
 
 // create event bus instance
@@ -58,7 +58,7 @@ Unsubscribe from a specific event.
 Subscribe will return an Object of type EventType which holds the unsubscribe method. 
 So you only need to call that method.
 
-``` 
+``` javascript
 // now i want to listen 
 const myEvent = MyEventBus.subscribe('after-log-in', (name, email) => {
     console.log(`${name} is logged in with email ${email}`); // Foo is logged in

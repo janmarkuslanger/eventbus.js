@@ -1,17 +1,33 @@
+import SubscriberType from './subscriber-type';
+import EventType from './event-type';
+import generateRandomNumber from './generate-random-number';
+
 class EventBus {
-    private subscriber: Array<Function>;
+    private subscriber: SubscriberType;
 
     constructor() {
-        this.subscriber = [];
+        this.subscriber = {};
     }
 
-    public subscribe(name: string, callbackFunction: Function): void {
+    public subscribe(name: string, callbackFunction: Function): EventType {
+        const _this = this;
+
+        const event: EventType = {
+            callback: callbackFunction,
+            unpublish() {
+                const events = _this.subscriber[name];
+                const index = events.indexOf(this);
+                events.splice(index, 1);
+            }
+        };
+
         if (name in this.subscriber) {
-            this.subscriber[name].push(callbackFunction);
-            return;
+            this.subscriber[name].push(event);
+            return event;
         }
 
-        this.subscriber[name] = [callbackFunction];
+        this.subscriber[name] = [event];
+        return event;
     }
 
     public publish(name: string, ...payload: any): void {
@@ -19,8 +35,8 @@ class EventBus {
             return;
         }
 
-        this.subscriber[name].forEach((callbackFunction) => {
-            callbackFunction(payload);
+        this.subscriber[name].forEach((event) => {
+            event.callback(...payload);
         })
     }
 }

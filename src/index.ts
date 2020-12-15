@@ -14,7 +14,7 @@ class EventBus {
 
         const event: EventType = {
             callback: callbackFunction,
-            unpublish() {
+            unsubscribe() {
                 const events = _this.subscriber[name];
                 const index = events.indexOf(this);
                 events.splice(index, 1);

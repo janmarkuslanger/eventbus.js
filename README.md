@@ -28,13 +28,17 @@ MyEventBus.publish('after-log-in', 'Foo', 'bar@gmail.com');
 The EventBus class handles everything. 
 You need to create an instance to subscribe or publish events. 
 
-`const MyEventBus = new EventBus()`
+``` javascript
+const MyEventBus = new EventBus()
+```
 
 ### API - subscribe
 
 Subscribe to a specific event.
 
-`EventBus.subscribe(name, callback)`
+``` javascript
+EventBus.subscribe(name, callback)
+```
 
 @param **name**:  Name of the event you want to subscribe
 @param **callback**:  Function that gets called when the event gets published
@@ -45,7 +49,9 @@ Subscribe to a specific event.
 
 Dispatch a specific event.
 
-`EventBus.publish(name, ...payload)`
+``` javascript
+EventBus.publish(name, ...payload)
+```
 
 **name**: Name of the published event
 **payload** Can be anything and as much arguments you want to add as payload

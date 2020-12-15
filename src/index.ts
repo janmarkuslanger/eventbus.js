@@ -1,6 +1,5 @@
 import SubscriberType from './subscriber-type';
 import EventType from './event-type';
-import generateRandomNumber from './generate-random-number';
 
 class EventBus {
     private subscriber: SubscriberType;

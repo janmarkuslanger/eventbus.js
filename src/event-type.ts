@@ -1,6 +1,6 @@
 interface EventType {
     callback: Function;
-    unpublish: Function;
+    unsubscribe: Function;
 };
 
 export default EventType;

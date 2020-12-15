@@ -1,0 +1,22 @@
+{
+  "name": "eventbus",
+  "version": "0.1.0",
+  "description": "A dead simple event bus written in typescript.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janmarkuslanger/eventbus.js.git"
+  },
+  "keywords": [
+    "event-bus"
+  ],
+  "author": "Jan-Markus Langer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janmarkuslanger/eventbus.js/issues"
+  },
+  "homepage": "https://github.com/janmarkuslanger/eventbus.js#readme"
+}
